@@ -1,9 +1,11 @@
-/* Jellyfin Home Page – Force hide header bar background (keep icons) */
+/* ==============================
+   Force Jellyfin Home Page Header Transparent
+   ============================== */
 
-/* Target the header container with strongest selector */
-body[data-page="home"] .skinHeader, 
-body[data-page="home"] .skinHeader.skinHeader-withBackground, 
-body[data-page="home"] header.skinHeader {
+/* Target the header including common theme classes */
+body[data-page="home"] .skinHeader,
+body[data-page="home"] .skinHeader-withBackground,
+body[data-page="home"] .skinHeader.semiTransparent {
     background-color: transparent !important;
     background-image: none !important;
     box-shadow: none !important;
@@ -13,27 +15,23 @@ body[data-page="home"] header.skinHeader {
     padding-bottom: 0 !important;
 }
 
-/* Remove the space Jellyfin leaves for the header */
+/* Remove extra space Jellyfin reserves for header */
 body[data-page="home"] .mainAnimatedPage,
 body[data-page="home"] .page {
     padding-top: 0 !important;
     margin-top: 0 !important;
 }
 
-/* Make tabs sit flush at the top */
+/* Make tabs flush at top */
 body[data-page="home"] .emby-tabs,
 body[data-page="home"] .tabs {
     margin-top: 0 !important;
 }
 
-/* Keep icons visible & interactable */
+/* Keep header buttons visible and clickable */
 body[data-page="home"] .skinHeader .headerButton,
 body[data-page="home"] .skinHeader .headerButton * {
-    opacity: 1 !important;
     pointer-events: auto !important;
+    opacity: 1 !important;
 }
 
-/* Debug - remove after validating */
-body[data-page="home"] .skinHeader {
-    outline: 4px dashed lime !important;
-}
