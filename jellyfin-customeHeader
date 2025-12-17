@@ -1,35 +1,39 @@
-/* =====================================================
-   Jellyfin Home Page – Remove Header Bar (Keep Icons)
-   Header confirmed as .skinHeader
-   ===================================================== */
+/* Jellyfin Home Page – Force hide header bar background (keep icons) */
 
-/* Make the header bar invisible */
-body[data-page="home"] .skinHeader {
+/* Target the header container with strongest selector */
+body[data-page="home"] .skinHeader, 
+body[data-page="home"] .skinHeader.skinHeader-withBackground, 
+body[data-page="home"] header.skinHeader {
     background-color: transparent !important;
     background-image: none !important;
     box-shadow: none !important;
     border: none !important;
+    min-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* Remove the space reserved for the header */
-body[data-page="home"] .mainAnimatedPage {
+/* Remove the space Jellyfin leaves for the header */
+body[data-page="home"] .mainAnimatedPage,
+body[data-page="home"] .page {
     padding-top: 0 !important;
     margin-top: 0 !important;
 }
 
-/* Ensure tabs sit flush at the top */
-body[data-page="home"] .emby-tabs {
+/* Make tabs sit flush at the top */
+body[data-page="home"] .emby-tabs,
+body[data-page="home"] .tabs {
     margin-top: 0 !important;
 }
 
-/* Keep header buttons visible and clickable */
-body[data-page="home"] .skinHeader .headerButton {
-    opacity: 0.9;
+/* Keep icons visible & interactable */
+body[data-page="home"] .skinHeader .headerButton,
+body[data-page="home"] .skinHeader .headerButton * {
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
 
-body[data-page="home"] .skinHeader .headerButton:hover {
-    opacity: 1;
-}
+/* Debug - remove after validating */
 body[data-page="home"] .skinHeader {
-    outline: 4px solid red !important;
+    outline: 4px dashed lime !important;
 }
