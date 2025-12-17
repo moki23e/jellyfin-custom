@@ -1,0 +1,32 @@
+/* =====================================================
+   Jellyfin Home Page – Remove Header Bar (Keep Icons)
+   Header confirmed as .skinHeader
+   ===================================================== */
+
+/* Make the header bar invisible */
+body[data-page="home"] .skinHeader {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Remove the space reserved for the header */
+body[data-page="home"] .mainAnimatedPage {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure tabs sit flush at the top */
+body[data-page="home"] .emby-tabs {
+    margin-top: 0 !important;
+}
+
+/* Keep header buttons visible and clickable */
+body[data-page="home"] .skinHeader .headerButton {
+    opacity: 0.9;
+}
+
+body[data-page="home"] .skinHeader .headerButton:hover {
+    opacity: 1;
+}
