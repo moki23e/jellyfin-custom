@@ -30,3 +30,6 @@ body[data-page="home"] .skinHeader .headerButton {
 body[data-page="home"] .skinHeader .headerButton:hover {
     opacity: 1;
 }
+body[data-page="home"] .skinHeader {
+    outline: 4px solid red !important;
+}
